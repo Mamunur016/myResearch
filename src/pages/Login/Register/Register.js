@@ -75,7 +75,7 @@ const Register = () => {
                     district,
                     division
                 }
-                console.log(data);
+                ///console.log(data);
                 setError('');
                 setUserName();
 

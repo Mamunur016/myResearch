@@ -21,11 +21,11 @@ const ProductDetails = () => {
 
     const onSubmit = data => {
         data.status = 'Pending';
-        console.log(data);
+        ///console.log(data);
 
         axios.post('http://localhost:5000/orders', data)
             .then(res => {
-                if (res.data.insertedId) {
+                if (res.data.message) {
                     swal({
                         title: "Good job!",
                         text: "ordered successfully !",
@@ -33,7 +33,7 @@ const ProductDetails = () => {
                     })
                         .then((update) => {
                             if (update) {
-                                console.log(id);
+                                ///console.log(id);
                                 const url = `http://localhost:5000/carts/${id}`;
                                 fetch(url, {
                                     method: 'DELETE'
@@ -58,7 +58,7 @@ const ProductDetails = () => {
         const url = `http://localhost:5000/services/${id}`
         fetch(url)
             .then(res => res.json())
-            .then(data => setProductDetails(data))
+            .then(data => setProductDetails(data[0]))
 
 
     }, []);

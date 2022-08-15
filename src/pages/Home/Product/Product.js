@@ -21,13 +21,13 @@ const Product = ({ product }) => {
             config
         }
 
-        console.log(data);
         axios.post('http://localhost:5000/carts', data)
             .then(res => {
-                if (res.data.insertedId) {
+
+                if (res.data.message) {
                     swal({
                         title: "Good job!",
-                        text: "add to cart successfully !",
+                        text: "Add to cart successfully !",
                         icon: "success",
                     })
                         .then((update) => {

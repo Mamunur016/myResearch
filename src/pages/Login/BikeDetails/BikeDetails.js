@@ -21,7 +21,7 @@ const BikeDetails = () => {
 
     const onSubmit = data => {
         data.status = 'Pending';
-        console.log(data);
+
 
         axios.post('http://localhost:5000/orders', data)
             .then(res => {

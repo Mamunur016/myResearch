@@ -25,7 +25,7 @@ const MakeAdmin = () => {
             .then((willDelete) => {
                 if (willDelete) {
                     const user = { email };
-                    console.log(user);
+                    //console.log(user);
                     fetch('http://localhost:5000/users/admin', {
                         method: 'PUT',
                         headers: {
@@ -37,7 +37,7 @@ const MakeAdmin = () => {
                         .then(res => res.json())
                         .then(data => {
                             if (data.modifiedCount) {
-                                console.log(data);
+                                ///console.log(data);
                                 swal({
                                     title: "Good job!",
                                     text: "Admin added successfully !",

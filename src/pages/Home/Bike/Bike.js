@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 import useAuth from '../../../Hooks/useAuth';
 
 const Bike = ({ bike }) => {
-    // console.log(bike);
+
     const { user } = useAuth();
 
     const handleAddToCart = () => {
@@ -21,7 +21,6 @@ const Bike = ({ bike }) => {
             config
         }
 
-        console.log(data);
         axios.post('http://localhost:5000/carts', data)
             .then(res => {
                 if (res.data.insertedId) {
